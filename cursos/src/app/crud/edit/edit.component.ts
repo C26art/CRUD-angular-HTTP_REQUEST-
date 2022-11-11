@@ -30,6 +30,7 @@ export class EditComponent implements OnInit {
 
     this.formEditarAluno = this.formBuilder.group({
       nome:['',[Validators.required]],
+      email:['',[Validators.required]],
       cpf:['',[Validators.required,Validators.pattern(/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/)]],
       telefone:['',[Validators.required,Validators.pattern(/(\(?\d{2}\)?\s)?(\d{4,5}\-?\d{4})$/)]],
       endereco:this.formBuilder.group({
@@ -48,6 +49,7 @@ export class EditComponent implements OnInit {
   loadForm(customer:CursoModel){
     this.formEditarAluno.patchValue({
       nome: customer.nome,
+      email: customer.email,
       cpf: customer.cpf,
       telefone: customer.telefone,
       endereco: customer.endereco
@@ -56,6 +58,7 @@ export class EditComponent implements OnInit {
 
   edit(){
     this.customerEntity.nome = this.nome.value;
+    this.customerEntity.email = this.email.value;
     this.customerEntity.cpf = this.cpf.value;
     this.customerEntity.telefone = this.telefone.value;
     this.customerEntity.endereco.cep = this.cep.value;
@@ -86,6 +89,7 @@ export class EditComponent implements OnInit {
 
 
   get nome(){  return this.formEditarAluno.get("nome")!}
+  get email(){  return this.formEditarAluno.get("email")!}
   get cpf(){return this.formEditarAluno.get("cpf")!}
   get telefone(){return this.formEditarAluno.get("telefone")!}
 

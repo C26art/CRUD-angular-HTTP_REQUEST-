@@ -24,6 +24,7 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     this.formAluno = this.formBuilder.group({
       nome:[''],
+      email:[''],
       cpf:['',[Validators.required,Validators.pattern(/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/)]],
       telefone:['',[Validators.required,Validators.pattern(/(\(?\d{2}\)?\s)?(\d{4,5}\-?\d{4})$/)]],
       endereco:this.formBuilder.group({
@@ -78,6 +79,7 @@ export class CreateComponent implements OnInit {
 
 
   get nome(){  return this.formAluno.get("nome")!}
+  get email(){  return this.formAluno.get("email")!}
   get cpf(){return this.formAluno.get("cpf")!}
   get telefone(){return this.formAluno.get("telefone")!}
 

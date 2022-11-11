@@ -6,16 +6,25 @@
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Nome Completo</mat-label>
-        <input matInput formControlName="nome" placeholder="Digite o nome completo do cliente" required>
+        <input matInput formControlName="nome" placeholder="Digite o nome completo do aluno" required>
       </mat-form-field>
       <mat-error *ngIf="nome.errors?.['required']">
+        <span style="color: red">Campo Obrigatório</span>
+      </mat-error>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Digite o email completo do aluno" required>
+      </mat-form-field>
+      <mat-error *ngIf="email.errors?.['required']">
         <span style="color: red">Campo Obrigatório</span>
       </mat-error>
     </div>
     <div class="coluna">
       <mat-form-field appearance="fill">
         <mat-label>CPF</mat-label>
-        <input matInput formControlName="cpf" placeholder="Digite o CPF do cliente" required>
+        <input matInput formControlName="cpf" placeholder="Digite o CPF do aluno" required>
       </mat-form-field>
       <mat-error *ngIf="cpf.errors?.['required']">
         <span style="color: red">Campo Obrigatório</span>
