@@ -21,6 +21,7 @@ import { CreateComponent } from './crud/create/create.component';
 import { EditComponent } from './crud/edit/edit.component';
 import { ListComponent } from './crud/list/list.component';
 import { CursoService } from './services/curso.service';
+import { FooterComponent } from './components/template/footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CursoService } from './services/curso.service';
     CreateComponent,
     EditComponent,
     ListComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

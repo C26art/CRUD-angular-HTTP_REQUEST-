@@ -3,7 +3,7 @@
     <h1 class="title">EDITAR ALUNO</h1>
     <mat-card-content>
   <form [formGroup]="formEditarAluno">
-    <div class="formBox">
+    <div>
       <mat-form-field appearance="fill">
         <mat-label>Nome Completo</mat-label>
         <input matInput formControlName="nome" placeholder="Digite o nome completo do cliente" required>
@@ -12,7 +12,7 @@
         <span style="color: red">Campo Obrigatório</span>
       </mat-error>
     </div>
-    <div class="formBox">
+    <div class="coluna">
       <mat-form-field appearance="fill">
         <mat-label>CPF</mat-label>
         <input matInput formControlName="cpf" placeholder="Digite o CPF do cliente" required>
@@ -20,9 +20,7 @@
       <mat-error *ngIf="cpf.errors?.['required']">
         <span style="color: red">Campo Obrigatório</span>
       </mat-error>
-    </div>
 
-    <div class="formBox">
       <mat-form-field appearance="fill">
         <mat-label>Telefone</mat-label>
         <input matInput formControlName="telefone" placeholder="(xx) xxxx-xxxx" required>
@@ -33,7 +31,7 @@
     </div>
 
     <div formGroupName="endereco">
-      <div class="formBox">
+      <div class="coluna">
         <mat-form-field appearance="fill">
           <mat-label>CEP</mat-label>
           <input matInput formControlName="cep" placeholder="Digite o CEP" required (keyup)="verifyCEP()">
@@ -41,8 +39,7 @@
         <mat-error *ngIf="cep.errors?.['required']">
           <span style="color: red">Campo Obrigatório</span>
         </mat-error>
-      </div>
-      <div class="formBox">
+
         <mat-form-field appearance="fill">
           <mat-label>Logradouro</mat-label>
           <input matInput formControlName="logradouro" required>
@@ -51,13 +48,12 @@
           <span style="color: red">Campo Obrigatório</span>
         </mat-error>
       </div>
-      <div class="formBox">
+      <div class="coluna">
         <mat-form-field appearance="fill">
           <mat-label>Complemento</mat-label>
           <input matInput formControlName="complemento">
         </mat-form-field>
-      </div>
-      <div class="formBox">
+
         <mat-form-field appearance="fill">
           <mat-label>Bairro</mat-label>
           <input matInput formControlName="bairro" required>
@@ -66,7 +62,7 @@
           <span style="color: red">Campo Obrigatório</span>
         </mat-error>
       </div>
-      <div class="formBox">
+      <div class="coluna">
         <mat-form-field appearance="fill">
           <mat-label>Cidade</mat-label>
           <input matInput formControlName="localidade" required>
@@ -74,8 +70,7 @@
         <mat-error *ngIf="localidade.errors?.['required']">
           <span style="color: red">Campo Obrigatório</span>
         </mat-error>
-      </div>
-      <div class="formBox">
+
         <mat-form-field appearance="fill">
           <mat-label>Estado</mat-label>
           <input matInput formControlName="uf" required>
