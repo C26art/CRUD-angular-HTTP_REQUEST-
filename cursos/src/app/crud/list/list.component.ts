@@ -11,7 +11,7 @@ import { CursoModel } from '../curso.model';
 })
 export class ListComponent implements OnInit {
   alunos!:CursoModel[];
-  displayedColumns:string[] = ['nome','telefone', 'cpf', 'editar','remover']
+  displayedColumns:string[] = ['nome','telefone', 'email', 'cpf', 'editar','remover']
   dataSource!:MatTableDataSource<CursoModel>;
 
   constructor(private service:CursoService, private router:Router) { }
