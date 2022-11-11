@@ -1,0 +1,95 @@
+<section>
+  <mat-card class="edit-container">
+    <h1 class="title">EDITAR ALUNO</h1>
+    <mat-card-content>
+  <form [formGroup]="formEditarAluno">
+    <div class="formBox">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome Completo</mat-label>
+        <input matInput formControlName="nome" placeholder="Digite o nome completo do cliente" required>
+      </mat-form-field>
+      <mat-error *ngIf="nome.errors?.['required']">
+        <span style="color: red">Campo Obrigatório</span>
+      </mat-error>
+    </div>
+    <div class="formBox">
+      <mat-form-field appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf" placeholder="Digite o CPF do cliente" required>
+      </mat-form-field>
+      <mat-error *ngIf="cpf.errors?.['required']">
+        <span style="color: red">Campo Obrigatório</span>
+      </mat-error>
+    </div>
+
+    <div class="formBox">
+      <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" placeholder="(xx) xxxx-xxxx" required>
+      </mat-form-field>
+      <mat-error *ngIf="telefone.errors?.['required']">
+        <span style="color: red">Campo Obrigatório</span>
+      </mat-error>
+    </div>
+
+    <div formGroupName="endereco">
+      <div class="formBox">
+        <mat-form-field appearance="fill">
+          <mat-label>CEP</mat-label>
+          <input matInput formControlName="cep" placeholder="Digite o CEP" required (keyup)="verifyCEP()">
+        </mat-form-field>
+        <mat-error *ngIf="cep.errors?.['required']">
+          <span style="color: red">Campo Obrigatório</span>
+        </mat-error>
+      </div>
+      <div class="formBox">
+        <mat-form-field appearance="fill">
+          <mat-label>Logradouro</mat-label>
+          <input matInput formControlName="logradouro" required>
+        </mat-form-field>
+        <mat-error *ngIf="logradouro.errors?.['required']">
+          <span style="color: red">Campo Obrigatório</span>
+        </mat-error>
+      </div>
+      <div class="formBox">
+        <mat-form-field appearance="fill">
+          <mat-label>Complemento</mat-label>
+          <input matInput formControlName="complemento">
+        </mat-form-field>
+      </div>
+      <div class="formBox">
+        <mat-form-field appearance="fill">
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="bairro" required>
+        </mat-form-field>
+        <mat-error *ngIf="bairro.errors?.['required']">
+          <span style="color: red">Campo Obrigatório</span>
+        </mat-error>
+      </div>
+      <div class="formBox">
+        <mat-form-field appearance="fill">
+          <mat-label>Cidade</mat-label>
+          <input matInput formControlName="localidade" required>
+        </mat-form-field>
+        <mat-error *ngIf="localidade.errors?.['required']">
+          <span style="color: red">Campo Obrigatório</span>
+        </mat-error>
+      </div>
+      <div class="formBox">
+        <mat-form-field appearance="fill">
+          <mat-label>Estado</mat-label>
+          <input matInput formControlName="uf" required>
+        </mat-form-field>
+        <mat-error *ngIf="uf.errors?.['required']">
+          <span style="color: red">Campo Obrigatório</span>
+        </mat-error>
+      </div>
+    </div>
+    <div class="btn-edit-container">
+    <button  mat-raised-button
+    color="primary" (click)="edit()">Editar</button>
+  </div>
+  </form>
+</mat-card-content>
+</mat-card>
+</section>
